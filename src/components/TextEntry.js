@@ -4,7 +4,7 @@ function TextEntry() {
   return (
     <div>
       <label for="user">Username: </label>
-      <input type="text" id="user" name="username" />
+      <input type="text" id="user" name="username" className="entryField" />
     </div>
   );
 }

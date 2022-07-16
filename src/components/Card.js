@@ -7,7 +7,7 @@ function Card() {
   return (
     <div className="card">
       <h2 className="header">Welcome!</h2>
-      <h4 className="header">Please sign in.</h4>
+      <h4 className="subheader">Please sign in.</h4>
       <form action="">
         <TextEntry />
         <PasswordEntry />

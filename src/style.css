@@ -1,3 +1,11 @@
+:root {
+  --gradient: radial-gradient(
+    circle,
+    rgba(27, 161, 132, 1) 0%,
+    rgba(178, 174, 238, 1) 100%
+  );
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,6 +13,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: var(--gradient);
+  background-size: 400%;
+  animation: bg-animation 20s infinite alternate;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: bottom left;
+  }
+  100% {
+    background-position: top right;
+  }
 }
 
 code {
@@ -15,12 +35,8 @@ code {
 .App {
   min-height: 100vh;
   text-align: center;
-  background: rgb(27, 161, 132);
-  background: radial-gradient(
-    circle,
-    rgba(27, 161, 132, 1) 0%,
-    rgba(178, 174, 238, 1) 100%
-  );
+  display: flex;
+  align-items: center;
 }
 
 .App-header {
@@ -43,11 +59,16 @@ code {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  opacity: 0.3;
+  opacity: 0.5;
   background-color: white;
   color: black;
+  box-shadow: 4px 4px 20px 4px rgb(75, 76, 77);
 }
 
 label {
   font-size: 14px;
+}
+
+.header {
+  padding-top: 5px;
 }

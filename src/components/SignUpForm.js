@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import TextEntry from "./TextEntry";
 import SubmitBtn from "./SubmitBtn";
 
-function SignUpForm() {
+const url = "http://localhost:9292";
+
+function SignUpForm({ setUser }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,22 +27,34 @@ function SignUpForm() {
       alert("Passwords do not match!");
       return;
     } else {
-      fetch(`http://localhost:9292/users/${formData.email}`)
+      fetch(`${url}/users/${formData.email}`)
         .then((r) => r.json())
         .then((result) => {
-          switch (result) {
-            // User does not yet exit
-            case null:
-              console.log("User not found");
-              break;
-
-            // User already exists
-            default:
-              alert("User already exists. Try logging in");
-              break;
+          if (result === null) {
+            return <PostUser />;
+          } else {
+            alert("User already exists. Try logging in.");
           }
         });
     }
+  };
+
+  // Post new user to database
+  const PostUser = () => {
+    console.log("Posting new user");
+    fetch(`${url}/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        password: formData.pass,
+      }),
+    })
+      .then((r) => r.json())
+      .then((user) => setUser(user));
   };
 
   // Handle form field changes

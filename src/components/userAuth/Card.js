@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
-function Card() {
+function Card({ setUser }) {
   const [page, setPage] = useState("landing");
 
   // Sign IN button behavior
@@ -30,7 +30,9 @@ function Card() {
         );
 
       case "signup":
-        return <SignUpForm handleSubmitClick={handleSubmitClick} />;
+        return (
+          <SignUpForm handleSubmitClick={handleSubmitClick} setUser={setUser} />
+        );
 
       default:
         break;

@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style.css";
-import Card from "./Card";
+import Card from "./userAuth/Card";
 
 function App() {
-  return (
-    <div className="App">
-      <Card />
-    </div>
-  );
+  const [user, setUser] = useState("");
+
+  return <div className="App">{!user && <Card setUser={setUser} />}</div>;
 }
 
 export default App;

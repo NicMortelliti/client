@@ -50,8 +50,9 @@ code {
 
 .card {
   margin: auto;
-  width: 20rem;
-  height: 25rem;
+  width: auto;
+  height: auto;
+  padding: 30px;
   border-radius: 1rem;
   opacity: 0.5;
   background-color: white;
@@ -61,6 +62,17 @@ code {
 
 label {
   font-size: 14px;
+  display: inline-block;
+  clear: left;
+  width: 100px;
+  text-align: right;
+}
+
+input {
+  margin-top: 20px;
+  margin-left: 10px;
+  display: inline-block;
+  height: 30px;
 }
 
 .header {
@@ -73,13 +85,9 @@ label {
   font-size: 20px;
 }
 
-.entryField {
-  width: 120px;
-  margin-top: 10px;
-}
-
 .nomatch {
   border-color: red;
+  background-color: lightcoral;
   color: red;
 }
 

@@ -4,7 +4,7 @@ import Card from "./userAuth/Card";
 import Main from "./userHome/Main";
 
 function App() {
-  const [user, setUser] = useState("nic");
+  const [user, setUser] = useState("");
 
   return (
     <div className="App">

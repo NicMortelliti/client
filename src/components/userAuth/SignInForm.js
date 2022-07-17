@@ -4,7 +4,9 @@ import SubmitBtn from "./SubmitBtn";
 import SignUpBtn from "./SignUpBtn";
 import TextEntry from "./TextEntry";
 
-function SignInForm({ handleSubmitClick, handleSignUpClick }) {
+const url = "http://localhost:9292";
+
+function SignInForm({ handleSignUpClick, setUser }) {
   const [formData, setFormData] = useState({
     email: "",
     pass: "",
@@ -18,6 +20,18 @@ function SignInForm({ handleSubmitClick, handleSignUpClick }) {
       [e.target.id]: e.target.value,
     };
     setFormData(updatedFormData);
+  };
+
+  // Sign IN button behavior
+  const handleSubmitClick = (e) => {
+    e.preventDefault();
+    fetch(`${url}/user/${formData.email}/${formData.pass}`)
+      .then((r) => r.json())
+      .then((user) => {
+        if (!Response.ok) {
+          console.log(user);
+        }
+      });
   };
 
   return (

@@ -6,12 +6,6 @@ import SignUpForm from "./SignUpForm";
 function Card({ setUser }) {
   const [page, setPage] = useState("landing");
 
-  // Sign IN button behavior
-  const handleSubmitClick = (e) => {
-    e.preventDefault();
-    console.log("Clicked Submit button");
-  };
-
   // Sign UP button behavior
   const handleSignUpClick = (e) => {
     e.preventDefault();
@@ -23,16 +17,11 @@ function Card({ setUser }) {
     switch (page) {
       case "landing":
         return (
-          <SignInForm
-            handleSubmitClick={handleSubmitClick}
-            handleSignUpClick={handleSignUpClick}
-          />
+          <SignInForm handleSignUpClick={handleSignUpClick} setUser={setUser} />
         );
 
       case "signup":
-        return (
-          <SignUpForm handleSubmitClick={handleSubmitClick} setUser={setUser} />
-        );
+        return <SignUpForm setUser={setUser} />;
 
       default:
         break;

@@ -78,6 +78,11 @@ label {
   margin-top: 10px;
 }
 
+.nomatch {
+  border-color: red;
+  color: red;
+}
+
 .button {
   margin: 40px;
   width: 100px;

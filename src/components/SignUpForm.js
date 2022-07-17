@@ -3,13 +3,25 @@ import React, { useState } from "react";
 import TextEntry from "./TextEntry";
 import SubmitBtn from "./SubmitBtn";
 
-function SignUpForm({ handleSubmitClick }) {
+function SignUpForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     pass: "",
     repass: "",
   });
+
+  // Handle form Submit
+  const handleSubmitClick = (e) => {
+    e.preventDefault();
+    if (formData.pass !== formData.repass) {
+      window.alert("Passwords do not match!");
+      return;
+    } else {
+      window.alert("Passwords DO match!");
+      return;
+    }
+  };
 
   // Handle form field changes
   const handleChange = (e) => {
@@ -58,6 +70,7 @@ function SignUpForm({ handleSubmitClick }) {
           type="password"
           id="repass"
           value={formData.repass}
+          altStyle={formData.pass !== formData.repass}
           handleChange={handleChange}
         />
         <SubmitBtn value="Submit" handleSubmitClick={handleSubmitClick} />

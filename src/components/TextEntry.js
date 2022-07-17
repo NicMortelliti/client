@@ -1,6 +1,13 @@
 import React from "react";
 
-function TextEntry({ fieldName, type, id, value, handleChange }) {
+function TextEntry({
+  fieldName,
+  type,
+  id,
+  value,
+  altStyle = false,
+  handleChange,
+}) {
   return (
     <div>
       <div>
@@ -8,7 +15,7 @@ function TextEntry({ fieldName, type, id, value, handleChange }) {
         <input
           type={type}
           id={id}
-          className="entryField"
+          className={altStyle ? "entryField nomatch" : "entryField"}
           value={value}
           onChange={handleChange}
         />

@@ -15,6 +15,7 @@ function Card() {
   // Sign UP button behavior
   const handleSignUpClick = (e) => {
     e.preventDefault();
+    console.log("clicked");
     setPage("signup");
   };
 

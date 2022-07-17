@@ -31,7 +31,7 @@ function SignUpForm({ setUser }) {
         .then((r) => r.json())
         .then((result) => {
           if (result === null) {
-            return <PostUser />;
+            postUser();
           } else {
             alert("User already exists. Try logging in.");
           }
@@ -40,7 +40,7 @@ function SignUpForm({ setUser }) {
   };
 
   // Post new user to database
-  const PostUser = () => {
+  const postUser = () => {
     console.log("Posting new user");
     fetch(`${url}/signup`, {
       method: "POST",

@@ -1,9 +1,9 @@
 import React from "react";
 
-function SignUpBtn() {
+function SignUpBtn({ handleClick }) {
   return (
     <div>
-      <button onClick={(e) => e.preventDefault()}>Sign up</button>
+      <button onClick={(e) => handleClick(e)}>Sign up</button>
     </div>
   );
 }

@@ -1,21 +1,21 @@
 import React from "react";
 
-import LoginBtn from "./LoginBtn";
+import SubmitBtn from "./SubmitBtn";
 import PasswordEntry from "./PasswordEntry";
 import SignUpBtn from "./SignUpBtn";
 import TextEntry from "./TextEntry";
 
-function SignInForm() {
+function SignInForm({ handleSubmitClick, handleSignUpClick }) {
   return (
     <div>
       <h2 className="header">Welcome!</h2>
       <h4 className="subheader">Please sign in.</h4>
       <form action="">
         <TextEntry fieldName="Email Address" />
-        <PasswordEntry />
-        <LoginBtn />
+        <PasswordEntry fieldName="Password" />
+        <SubmitBtn value="Sign In" handleSubmitClick={handleSubmitClick} />
       </form>
-      <SignUpBtn />
+      <SignUpBtn handleClick={handleSignUpClick} />
     </div>
   );
 }

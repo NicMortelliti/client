@@ -13,6 +13,15 @@ function SignUpForm({ setUser }) {
     repass: "",
   });
 
+  // Handle form field changes
+  const handleChange = (e) => {
+    const updatedFormData = {
+      ...formData,
+      [e.target.id]: e.target.value,
+    };
+    setFormData(updatedFormData);
+  };
+
   // Handle form Submit
   const handleSubmitClick = (e) => {
     e.preventDefault();
@@ -55,15 +64,6 @@ function SignUpForm({ setUser }) {
     })
       .then((r) => r.json())
       .then((user) => setUser(user));
-  };
-
-  // Handle form field changes
-  const handleChange = (e) => {
-    const updatedFormData = {
-      ...formData,
-      [e.target.id]: e.target.value,
-    };
-    setFormData(updatedFormData);
   };
 
   return (

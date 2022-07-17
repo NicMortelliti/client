@@ -23,7 +23,7 @@ function SignInForm({ handleSubmitClick, handleSignUpClick }) {
   return (
     <div>
       <h2 className="header">Welcome!</h2>
-      <h4 className="subheader">Please sign in.</h4>
+      <h4 className="subheader">Please sign in</h4>
       <form action="">
         {/* Email for user */}
         <TextEntry

@@ -1,10 +1,17 @@
 import React from "react";
 
-function TextEntry() {
+function TextEntry({ fieldName }) {
   return (
     <div>
-      <label for="user">Username: </label>
-      <input type="text" id="user" name="username" className="entryField" />
+      <div>
+        <label htmlFor={fieldName}>{`${fieldName}:`} </label>
+        <input
+          type="text"
+          id={fieldName}
+          name={fieldName}
+          className="entryField"
+        />
+      </div>
     </div>
   );
 }

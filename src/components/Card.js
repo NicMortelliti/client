@@ -1,18 +1,28 @@
-import React from "react";
-import LoginBtn from "./LoginBtn";
-import PasswordEntry from "./PasswordEntry";
-import TextEntry from "./TextEntry";
+import React, { useState } from "react";
+
+import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
 
 function Card() {
+  const [page, setPage] = useState("signup");
+
+  // Determine which form to render
+  const RenderForm = () => {
+    switch (page) {
+      case "landing":
+        return <SignInForm />;
+
+      case "signup":
+        return <SignUpForm />;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="card">
-      <h2 className="header">Welcome!</h2>
-      <h4 className="subheader">Please sign in.</h4>
-      <form action="">
-        <TextEntry />
-        <PasswordEntry />
-        <LoginBtn />
-      </form>
+      <RenderForm />
     </div>
   );
 }

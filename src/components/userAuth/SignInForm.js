@@ -27,11 +27,7 @@ function SignInForm({ handleSignUpClick, setUser }) {
     e.preventDefault();
     fetch(`${url}/user/${formData.email}/${formData.pass}`)
       .then((r) => r.json())
-      .then((user) => {
-        if (!Response.ok) {
-          console.log(user);
-        }
-      });
+      .then((user) => setUser(user));
   };
 
   return (

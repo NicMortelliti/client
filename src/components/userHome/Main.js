@@ -1,7 +1,8 @@
 import React from "react";
 
 function Main({ user, setUser }) {
-  let capUser = user.split("");
+  console.log(user);
+  let capUser = user.name.split("");
   capUser[0] = capUser[0].toUpperCase();
   capUser = capUser.join("");
 

@@ -63,7 +63,8 @@ function SignUpForm({ setUser }) {
       }),
     })
       .then((r) => r.json())
-      .then((user) => setUser(user));
+      .then((user) => setUser(user))
+      .then((user) => console.log(user));
   };
 
   return (

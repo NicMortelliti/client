@@ -94,9 +94,45 @@ label {
   font-weight: bold;
   border-radius: 0.5rem;
   box-shadow: 2px 2px 5px 0.5px rgb(75, 76, 77);
+  cursor: pointer;
 }
 
 .button:active {
   box-shadow: none;
   transform: translateY(1px);
+}
+
+.planeBtn {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.planeBtnBlack {
+  color: black;
+}
+
+.planeBtnWhite {
+  color: white;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.tagline {
+  font-family: Caveat;
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  margin: auto;
+}
+
+h1 {
+  font-size: 7rem;
+  margin: 0;
+  padding: 0;
 }

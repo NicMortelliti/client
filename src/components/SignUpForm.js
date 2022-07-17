@@ -45,7 +45,6 @@ function SignUpForm() {
 
   // Handle form field changes
   const handleChange = (e) => {
-    console.log(e.target.id, e.target.value);
     const updatedFormData = {
       ...formData,
       [e.target.id]: e.target.value,
